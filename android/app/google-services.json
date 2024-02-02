@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "26245429340",
+    "project_id": "peschef-7d374",
+    "storage_bucket": "peschef-7d374.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26245429340:android:868398b4e84d4976a70e99",
+        "android_client_info": {
+          "package_name": "it.peschef.peschef"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26245429340-eoggvnb276ei8qf82sjjq899ut5ianom.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "it.peschef.peschef",
+            "certificate_hash": "ba7ee94e27e0145d22cd762e74daf4bffe931b62"
+          }
+        },
+        {
+          "client_id": "26245429340-0c410m3ar1jbae1ql15rp9uhmvojui2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB6DIfaObg6J9iZjpG0QdLdgr_s0Onvgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26245429340-0c410m3ar1jbae1ql15rp9uhmvojui2g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "26245429340-tu5sokfib5p8q3hi646qqrkcf4qnr9pg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "it.peschef.peschef"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26245429340:android:e0611d6aa2879591a70e99",
+        "android_client_info": {
+          "package_name": "it.peschef.peschef_delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "26245429340-hvn05cl9hhcihfmlnpq38j8uqnq1ek14.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "it.peschef.peschef_delivery",
+            "certificate_hash": "ba7ee94e27e0145d22cd762e74daf4bffe931b62"
+          }
+        },
+        {
+          "client_id": "26245429340-0c410m3ar1jbae1ql15rp9uhmvojui2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB6DIfaObg6J9iZjpG0QdLdgr_s0Onvgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "26245429340-0c410m3ar1jbae1ql15rp9uhmvojui2g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "26245429340-tu5sokfib5p8q3hi646qqrkcf4qnr9pg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "it.peschef.peschef"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
