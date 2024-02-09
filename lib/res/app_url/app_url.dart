@@ -14,4 +14,6 @@ class AppUrl {
   static const String resetPasswordUrl = '${baseUrl}/driver_reset-Password';
   static const String otpVerifyUrl = '${baseUrl}/driver-verify-password';
   static const String forgotePasswordUrl = '${baseUrl}/driver-forget-password';
+  static const String restroTrackUrl = '${baseUrl}/driver-resturant-track';
+  static const String orderPickedUrl = '${baseUrl}/driver-resturant-picked';
 }

@@ -25,7 +25,7 @@ class _InterNetExceptionWidgetState extends State<InterNetExceptionWidget> {
           ),
           Icon(
             Icons.cloud_off,
-            color: AppColor.redColor,
+            color: AppColor.primaryColor,
             size: Get.height * 0.18,
           ),
           Padding(
@@ -50,7 +50,7 @@ class _InterNetExceptionWidgetState extends State<InterNetExceptionWidget> {
               height: 44,
               width: 160,
               decoration: BoxDecoration(
-                  color: Color.fromRGBO(214, 51, 72, 1),
+                  color: AppColor.primaryColor,
                   borderRadius: BorderRadius.circular(50)),
               child: Center(
                   child: Text(

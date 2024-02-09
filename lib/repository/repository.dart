@@ -7,10 +7,12 @@ import 'package:peschef_delivery/models/logOutModel.dart';
 import 'package:peschef_delivery/models/loginModel.dart';
 import 'package:peschef_delivery/models/myProfileModel.dart';
 import 'package:peschef_delivery/models/orderAcceptModel.dart';
+import 'package:peschef_delivery/models/orderPickedModel.dart';
 import 'package:peschef_delivery/models/otpVerifyModel.dart';
 import 'package:peschef_delivery/models/productScreenModel.dart';
 import 'package:peschef_delivery/models/recentOrdersModel.dart';
 import 'package:peschef_delivery/models/resetPasswordModel.dart';
+import 'package:peschef_delivery/models/restroTrackModel.dart';
 import 'package:peschef_delivery/res/app_url/app_url.dart';
 
 class Repository {
@@ -81,5 +83,16 @@ class Repository {
     dynamic response =
         await _apiService.postApi(data, AppUrl.forgotePasswordUrl, token);
     return ForgotPasswordModel.fromJson(response);
+  }
+
+  Future<dynamic> RestroTrackApi(token) async {
+    dynamic response = await _apiService.getApi(AppUrl.restroTrackUrl, token);
+    return RestroTrackModel.fromJson(response);
+  }
+
+  Future<dynamic> OrderPickedApi(var data, token) async {
+    dynamic response =
+        await _apiService.postApi(data, AppUrl.orderPickedUrl, token);
+    return OrderPickedModel.fromJson(response);
   }
 }

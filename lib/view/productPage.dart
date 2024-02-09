@@ -579,7 +579,9 @@ class _ProductScreenState extends State<ProductScreen> {
                                     ),
                                     GestureDetector(
                                       onTap: () {
-                                        Get.to(() => RestaurantTrackScreen());
+                                        Get.to(() => RestaurantTrackScreen(
+                                              id: widget.id,
+                                            ));
                                       },
                                       child: Container(
                                         height: Get.height * 0.065,
@@ -598,7 +600,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                               //       )
                                               //     :
                                               Text(
-                                            'Pick up',
+                                            'Go to',
                                             style: TextStyle(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w400,

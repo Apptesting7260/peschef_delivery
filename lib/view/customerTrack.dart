@@ -1,5 +1,8 @@
 import 'dart:async';
+import 'dart:typed_data';
+import 'dart:ui' as ui;
 
+import 'package:flutter/services.dart';
 import 'package:peschef_delivery/res/colors/app_color.dart';
 import 'package:peschef_delivery/view/homeScreen.dart';
 import 'package:peschef_delivery/view/tabBarView.dart';
@@ -85,31 +88,58 @@ class _CustomerTrackScreenState extends State<CustomerTrackScreen> {
     );
   }
 
+  Future<Uint8List> getBytesFromAsset(String path, int width) async {
+    ByteData data = await rootBundle.load(path);
+    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
+        targetWidth: width);
+    ui.FrameInfo fi = await codec.getNextFrame();
+    return (await fi.image.toByteData(format: ui.ImageByteFormat.png))!
+        .buffer
+        .asUint8List();
+  }
+
   BitmapDescriptor sourceIcon = BitmapDescriptor.defaultMarker;
   BitmapDescriptor destinationIcon = BitmapDescriptor.defaultMarker;
   BitmapDescriptor currentLocationIcon = BitmapDescriptor.defaultMarker;
-  void setCustomMarkerIcon() {
-    BitmapDescriptor.fromAssetImage(
-            ImageConfiguration.empty, "assets/Pin_source.png")
-        .then(
-      (icon) {
-        sourceIcon = icon;
-      },
-    );
-    BitmapDescriptor.fromAssetImage(
-            ImageConfiguration.empty, "assets/Pin_destination.png")
-        .then(
-      (icon) {
-        destinationIcon = icon;
-      },
-    );
-    BitmapDescriptor.fromAssetImage(
-            ImageConfiguration.empty, "assets/Badge.png")
-        .then(
-      (icon) {
-        currentLocationIcon = icon;
-      },
-    );
+  Future<void> setCustomMarkerIcon() async {
+    final Uint8List markerIcon1 =
+        await getBytesFromAsset('assets/Pin_source.png', 50);
+    setState(() {
+      sourceIcon = BitmapDescriptor.fromBytes(markerIcon1);
+    });
+
+    final Uint8List markerIcon2 =
+        await getBytesFromAsset('assets/Pin_destination.png', 80);
+    setState(() {
+      destinationIcon = BitmapDescriptor.fromBytes(markerIcon2);
+    });
+
+    final Uint8List markerIcon3 =
+        await getBytesFromAsset('assets/Badge.png', 50);
+    setState(() {
+      currentLocationIcon = BitmapDescriptor.fromBytes(markerIcon3);
+    });
+    // BitmapDescriptor.fromAssetImage(
+    //         ImageConfiguration.empty, "assets/Pin_source.png")
+    //     .then(
+    //   (icon) {
+    //     sourceIcon = icon;
+    //   },
+    // );
+    // BitmapDescriptor.fromAssetImage(
+    //         ImageConfiguration.empty, "assets/Pin_destination.png")
+    //     .then(
+    //   (icon) {
+    //     destinationIcon = icon;
+    //   },
+    // );
+    // BitmapDescriptor.fromAssetImage(
+    //         ImageConfiguration.empty, "assets/Badge.png")
+    //     .then(
+    //   (icon) {
+    //     currentLocationIcon = icon;
+    //   },
+    // );
   }
 
   @override
